@@ -77,13 +77,14 @@ function mostrarData(data, page) {
     let pageData = data.slice(startIndex, endIndex);
 
     let body = "";
-    for (let i = 0; i < pageData.length; i++) {
-        body += `<tr><td>${pageData[i].tipo}</td><td>
-        ${pageData[i].rubro}</td><td>${pageData[i].subregion}</td><td>${pageData[i].anio}</td><td>${pageData[i].municipio}</td>
-        <td>${pageData[i].area_total}</td>
-        <td>${pageData[i].area_produccion}</td>
-        <td>${pageData[i].volumen_produccion}</td></tr>`;
+    for (const item of pageData) {
+        body += `<tr><td>${item.tipo}</td><td>
+        ${item.rubro}</td><td>${item.subregion}</td><td>${item.anio}</td><td>${item.municipio}</td>
+        <td>${item.area_total}</td>
+        <td>${item.area_produccion}</td>
+        <td>${item.volumen_produccion}</td></tr>`;
     }
+    
     document.getElementById('data').innerHTML = body;
     console.log("Datos mostrados en la tabla");
     
